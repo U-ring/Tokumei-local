@@ -7,7 +7,7 @@
   <p class="display-5 font-weight-bold py-4 mx-auto">フレンドと有意義なコミュニケーションを楽しみましょう。</p>
  </div>
  <div class="d-flex justify-content-between flex-wrap px-2">
-  
+
        @foreach($friends as $friend)
         @if(isset($friend->avatar))
          <div class="d-flex flex-row pb-3">
@@ -39,7 +39,7 @@
             </td>
            </tr>
           </table>
-         </div>   
+         </div>
         @elseif(!isset($friend->avatar))
          <div class="d-flex flex-row pb-3">
           <table>
@@ -70,7 +70,7 @@
             </td>
            </tr>
           </table>
-         </div> 
+         </div>
         @else
        @endif
        @endforeach
@@ -88,11 +88,11 @@
         <th></th>
         <th></th>
       </tr>
-     </thead> 
+     </thead>
         @foreach($users as $user)
          @if(isset($user->avatar))
          <tr>
-          <td style="width:60px;height:60px;"><div class="rounded-circle shadow-lg p-1"><img src="{{ secure_asset('storage/image/' . $user->avatar) }}" class="rounded-circle" width="50" height="50"></div></td>
+          <td style="width:60px;height:60px;"><div class="rounded-circle shadow-lg p-1"><img src="{{ asset('storage/image/' . $user->avatar) }}" class="rounded-circle" width="50" height="50"></div></td>
           <td width="25%">{{ $user->name }}</td>
           <td>{{ $user->text }}</td>
           <td><div>@include('parts.follow_button',['user'=>$user])</div></td>
@@ -102,7 +102,7 @@
           <td style="width:60px;height:60px;"><div class="rounded-circle shadow-lg p-1"><img src="https://tokumeikaigi.s3.us-east-2.amazonaws.com/unknown.jpg" class="rounded-circle" width="50" height="50"></div></td>
           <td width="25%">{{ $user->name }}</td>
           <td>{{ $user->text }}</td>
-          <td><div>@include('parts.follow_button',['user'=>$user])</div></td>          
+          <td><div>@include('parts.follow_button',['user'=>$user])</div></td>
          </tr>
          @else
         @endif

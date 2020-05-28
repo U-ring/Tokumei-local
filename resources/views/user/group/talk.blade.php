@@ -14,7 +14,7 @@
 
   </div>
 </div>
-{{-- <script src="{{ secure_asset('js/message.js') }}"></script> --}}
+{{-- <script src="{{ asset('js/message.js') }}"></script> --}}
 
 <script>
 
